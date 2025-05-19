@@ -16,6 +16,7 @@ import { ModulesPage } from '../pages/ModulesPage';
 import { ModuleDetailPage } from '../pages/ModuleDetailPage';
 import { JournalPage } from '../pages/JournalPage';
 import { PremiumPage } from '../pages/PremiumPage';
+import { ProfilePage } from '../pages/ProfilePage';
 
 interface PrivateRouteProps {
   children: React.ReactNode;
@@ -58,6 +59,7 @@ export function AppRoutes() {
         <Route path="/modules/:moduleId" element={<ModuleDetailPage />} />
         <Route path="/journal" element={<JournalPage />} />
         <Route path="/premium" element={<PremiumPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
 
       {/* Ruta para cualquier otra dirección */}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, addDoc, getDocs, query, orderBy, where, Timestamp } from 'firebase/firestore';
+import { collection, addDoc, query, orderBy, where, Timestamp, onSnapshot } from 'firebase/firestore';
 import { firestore } from '../firebase/config';
 import { useAuthContext } from '../context/AuthContext';
 
@@ -19,21 +19,21 @@ export function JournalPage() {
   
   // Cargar entradas del diario
   useEffect(() => {
-    const fetchEntries = async () => {
-      if (!user) return;
-      
-      try {
-        setIsLoading(true);
-        setError(null);
-        
-        const entriesRef = collection(firestore, 'journal');
-        const q = query(
-          entriesRef,
-          where('userId', '==', user.uid),
-          orderBy('createdAt', 'desc')
-        );
-        
-        const querySnapshot = await getDocs(q);
+    if (!user) return;
+    
+    setIsLoading(true);
+    setError(null);
+    
+    const entriesRef = collection(firestore, 'journal');
+    const q = query(
+      entriesRef,
+      where('userId', '==', user.uid),
+      orderBy('createdAt', 'desc')
+    );
+    
+    // Use onSnapshot instead of getDocs to set up a listener with cleanup
+    const unsubscribe = onSnapshot(q, 
+      (querySnapshot) => {
         const entryList: JournalEntry[] = [];
         
         querySnapshot.forEach((doc) => {
@@ -44,15 +44,17 @@ export function JournalPage() {
         });
         
         setEntries(entryList);
-      } catch (err) {
+        setIsLoading(false);
+      },
+      (err) => {
         console.error('Error fetching journal entries:', err);
         setError('No se pudieron cargar las entradas. Intenta nuevamente.');
-      } finally {
         setIsLoading(false);
       }
-    };
+    );
     
-    fetchEntries();
+    // Return the unsubscribe function to clean up the listener when the component unmounts
+    return () => unsubscribe();
   }, [user]);
   
   // Guardar nueva entrada

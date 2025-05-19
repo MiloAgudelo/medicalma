@@ -15,7 +15,7 @@ export function SplashScreen() {
           navigate('/login');
         }
       }
-    }, 2000);
+    }, 3000);
     
     return () => clearTimeout(timer);
   }, [loading, user, navigate]);

@@ -84,6 +84,27 @@ const navItems = [
         />
       </svg>
     ) 
+  },
+  { 
+    name: 'Perfil',
+    path: '/profile',
+    icon: (active: boolean) => (
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className={`h-6 w-6 ${active ? 'text-blue-500' : 'text-gray-500'}`}
+        style={active ? { color: '#0b8fac' } : {}}
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeWidth={2} 
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" 
+        />
+      </svg>
+    ) 
   }
 ];
 

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![License](https://img.shields.io/github/license/MiloAgudelo/medicalma)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-11.7-FFCA28?logo=firebase&logoColor=black)
