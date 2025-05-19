@@ -10,6 +10,7 @@ import { SignupPage } from '../pages/SignupPage';
 import { SplashScreen } from '../pages/SplashScreen';
 
 // Páginas protegidas
+import { HomePage } from '../pages/HomePage';
 import { ExercisesPage } from '../pages/ExercisesPage';
 import { ExerciseDetailPage } from '../pages/ExerciseDetailPage';
 import { ModulesPage } from '../pages/ModulesPage';
@@ -53,6 +54,7 @@ export function AppRoutes() {
           </PrivateRoute>
         }
       >
+        <Route path="/home" element={<HomePage />} />
         <Route path="/exercises" element={<ExercisesPage />} />
         <Route path="/exercises/:exerciseId" element={<ExerciseDetailPage />} />
         <Route path="/modules" element={<ModulesPage />} />

@@ -10,7 +10,7 @@ export function SplashScreen() {
     const timer = setTimeout(() => {
       if (!loading) {
         if (user) {
-          navigate('/exercises');
+          navigate('/home');
         } else {
           navigate('/login');
         }
