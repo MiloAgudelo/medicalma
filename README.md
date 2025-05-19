@@ -77,18 +77,23 @@ MediCalma es una aplicación web moderna que facilita la gestión de citas médi
 ```
 medicalma/
 ├── public/          # Archivos estáticos
+├── src/
+│   ├── assets/      # Recursos estáticos (imágenes, etc.)
 │   ├── components/  # Componentes reutilizables
+│   ├── context/     # Contextos de React
 │   ├── firebase/    # Configuración y servicios de Firebase
 │   ├── hooks/       # Custom React hooks
 │   ├── pages/       # Componentes de página
 │   ├── routes/      # Configuración de rutas
-│   ├── styles/      # Estilos globales
 │   ├── types/       # Definiciones de TypeScript
 │   ├── utils/       # Funciones de utilidad
 │   ├── App.tsx      # Componente principal
+│   ├── App.css      # Estilos principales
+│   ├── index.css    # Estilos globales
 │   └── main.tsx     # Punto de entrada
 ├── firestore.rules  # Reglas de seguridad de Firestore
-└── firebase.json    # Configuración de Firebase
+├── firebase.json    # Configuración de Firebase
+└── LICENSE          # Archivo de licencia MIT
 ```
 
 ## 🌩 Despliegue
@@ -115,7 +120,7 @@ Por favor, asegúrate de seguir nuestro código de conducta y de probar tus camb
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado bajo la Licencia MIT de Camilo Agudelo Jaramillo - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
