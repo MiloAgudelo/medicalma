@@ -1,54 +1,124 @@
-# React + TypeScript + Vite
+# 🏥 MediCalma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+![License](https://img.shields.io/github/license/MiloAgudelo/medicalma)
+![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-11.7-FFCA28?logo=firebase&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Una plataforma médica moderna diseñada para mejorar la experiencia de pacientes y profesionales de la salud.**
 
-## Expanding the ESLint configuration
+[Demo en vivo](https://medicalma-iuva.web.app) | [Reportar un problema](https://github.com/MiloAgudelo/medicalma/issues)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+</div>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📋 Tabla de Contenidos
+
+- [Visión general](#-visión-general)
+- [Características](#-características)
+- [Tecnologías](#-tecnologías)
+- [Comenzando](#-comenzando)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Despliegue](#-despliegue)
+- [Contribuir](#-contribuir)
+- [Licencia](#-licencia)
+
+## 🔍 Visión general
+
+MediCalma es una aplicación web moderna que facilita la gestión de citas médicas, historiales clínicos y comunicación entre pacientes y profesionales de la salud. La plataforma está diseñada con un enfoque en la experiencia de usuario, accesibilidad y seguridad de datos.
+
+## ✨ Características
+
+- 🔐 **Autenticación segura** - Sistema de login/registro con Firebase Auth
+- 📅 **Gestión de citas** - Agenda, reprograma y cancela citas médicas
+- 📝 **Historiales médicos** - Acceso a historiales médicos digitales
+- 💬 **Comunicación** - Mensajería entre pacientes y profesionales
+- 📱 **Diseño responsivo** - Experiencia óptima en cualquier dispositivo
+- 🌙 **Modo oscuro** - Interfaz adaptable a las preferencias del usuario
+
+## 🛠 Tecnologías
+
+- **Frontend**: React 19, TypeScript, Tailwind CSS 4
+- **Backend**: Firebase (Autenticación, Firestore, Hosting)
+- **Herramientas**: Vite, ESLint, PWA
+
+## 🚀 Comenzando
+
+### Prerrequisitos
+
+- Node.js (versión 18 o superior)
+- pnpm
+
+### Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/MiloAgudelo/medicalma.git
+   cd medicalma
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
+
+3. Configura variables de entorno:
+   Crea un archivo `.env` basado en `.env.example` con tus credenciales de Firebase.
+
+4. Inicia el servidor de desarrollo:
+   ```bash
+   pnpm dev
+   ```
+
+## 📁 Estructura del proyecto
+
+```
+medicalma/
+├── public/          # Archivos estáticos
+│   ├── components/  # Componentes reutilizables
+│   ├── firebase/    # Configuración y servicios de Firebase
+│   ├── hooks/       # Custom React hooks
+│   ├── pages/       # Componentes de página
+│   ├── routes/      # Configuración de rutas
+│   ├── styles/      # Estilos globales
+│   ├── types/       # Definiciones de TypeScript
+│   ├── utils/       # Funciones de utilidad
+│   ├── App.tsx      # Componente principal
+│   └── main.tsx     # Punto de entrada
+├── firestore.rules  # Reglas de seguridad de Firestore
+└── firebase.json    # Configuración de Firebase
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌩 Despliegue
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Para desplegar la aplicación en Firebase:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm firebase:deploy
 ```
+
+Esto construirá el proyecto y lo desplegará a Firebase Hosting y aplicará las reglas de seguridad de Firestore.
+
+## 👥 Contribuir
+
+¡Las contribuciones son bienvenidas! Si quieres contribuir:
+
+1. Haz fork del proyecto
+2. Crea una rama para tu característica (`git checkout -b feature/amazing-feature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some amazing feature'`)
+4. Haz push a la rama (`git push origin feature/amazing-feature`)
+5. Abre un Pull Request
+
+Por favor, asegúrate de seguir nuestro código de conducta y de probar tus cambios antes de enviarlos.
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+<div align="center">
+  Hecho con ❤️ por el equipo de MediCalma
+</div>

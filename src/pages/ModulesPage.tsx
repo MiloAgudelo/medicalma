@@ -20,9 +20,10 @@ const modules = [
     title: 'Mejora tu Sueño',
     description: 'Explora prácticas y rutinas para conseguir un descanso más reparador.',
     lessons: 3,
-    image: 'https://images.unsplash.com/photo-1455642305367-68834a9d4282?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
+    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // ¡Imagen actualizada aquí!
   }
 ];
+
 
 export function ModulesPage() {
   return (
