@@ -1,12 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "./index.html";
+@source "./src/**/*.{js,ts,jsx,tsx}";
 
 @layer base {
   html {
     font-family: system-ui, sans-serif;
   }
   body {
-    @apply bg-white min-h-screen;
+    @apply bg-[#FFFFFF] min-h-screen;
   }
 }
