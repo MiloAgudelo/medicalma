@@ -7,6 +7,6 @@
     font-family: system-ui, sans-serif;
   }
   body {
-    @apply bg-primary min-h-screen;
+    @apply bg-white min-h-screen;
   }
 }

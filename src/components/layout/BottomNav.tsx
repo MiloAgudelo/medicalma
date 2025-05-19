@@ -7,7 +7,8 @@ const navItems = [
     icon: (active: boolean) => (
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className={`h-6 w-6 ${active ? 'text-splash' : 'text-gray-500'}`} 
+        className={`h-6 w-6 ${active ? 'text-blue-500' : 'text-gray-500'}`}
+        style={active ? { color: '#0b8fac' } : {}}
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -27,7 +28,8 @@ const navItems = [
     icon: (active: boolean) => (
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className={`h-6 w-6 ${active ? 'text-splash' : 'text-gray-500'}`} 
+        className={`h-6 w-6 ${active ? 'text-blue-500' : 'text-gray-500'}`}
+        style={active ? { color: '#0b8fac' } : {}}
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -47,7 +49,8 @@ const navItems = [
     icon: (active: boolean) => (
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className={`h-6 w-6 ${active ? 'text-splash' : 'text-gray-500'}`} 
+        className={`h-6 w-6 ${active ? 'text-blue-500' : 'text-gray-500'}`}
+        style={active ? { color: '#0b8fac' } : {}}
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -67,7 +70,8 @@ const navItems = [
     icon: (active: boolean) => (
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className={`h-6 w-6 ${active ? 'text-splash' : 'text-gray-500'}`} 
+        className={`h-6 w-6 ${active ? 'text-blue-500' : 'text-gray-500'}`}
+        style={active ? { color: '#0b8fac' } : {}}
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -98,7 +102,10 @@ export function BottomNav() {
               className="flex flex-col items-center justify-center w-full h-full"
             >
               {item.icon(isActive)}
-              <span className={`text-xs mt-1 ${isActive ? 'text-splash font-medium' : 'text-gray-500'}`}>
+              <span 
+                className={`text-xs mt-1 ${isActive ? 'font-medium' : 'text-gray-500'}`}
+                style={isActive ? { color: '#0b8fac' } : {}}
+              >
                 {item.name}
               </span>
             </Link>

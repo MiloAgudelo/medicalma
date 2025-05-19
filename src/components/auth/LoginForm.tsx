@@ -60,7 +60,8 @@ export function LoginForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-splash focus:border-splash"
+            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-blue-300"
+            style={{ borderColor: '#0b8fac' }}
           />
         </div>
         
@@ -74,7 +75,8 @@ export function LoginForm() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-splash focus:border-splash"
+            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-blue-300"
+            style={{ borderColor: '#0b8fac' }}
           />
         </div>
         
@@ -82,7 +84,8 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-splash hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-splash disabled:opacity-50"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50"
+            style={{ backgroundColor: '#0b8fac' }}
           >
             {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
           </button>
@@ -93,7 +96,8 @@ export function LoginForm() {
         <button
           onClick={handleGoogleLogin}
           disabled={isLoading}
-          className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-splash disabled:opacity-50"
+          className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50"
+          style={{ borderColor: '#0b8fac' }}
         >
           <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
             <path
@@ -107,7 +111,7 @@ export function LoginForm() {
       
       <p className="mt-4 text-center text-sm text-gray-600">
         ¿No tienes una cuenta?{' '}
-        <Link to="/signup" className="font-medium text-splash hover:text-splash/80">
+        <Link to="/signup" className="font-medium hover:text-opacity-80" style={{ color: '#0b8fac' }}>
           Regístrate
         </Link>
       </p>

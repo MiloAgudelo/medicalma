@@ -21,7 +21,7 @@ export function SplashScreen() {
   }, [loading, user, navigate]);
   
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-splash">
+    <div className="fixed inset-0 flex items-center justify-center" style={{ backgroundColor: '#0b8fac' }}>
       <div className="text-center">
         <h1 className="text-4xl font-bold text-white mb-4">MediCalma</h1>
         <div className="mt-8">
