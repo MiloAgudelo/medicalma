@@ -6,7 +6,8 @@ import {
   signOut, 
   onAuthStateChanged,
   GoogleAuthProvider,
-  signInWithPopup
+  signInWithRedirect,
+  getRedirectResult
 } from 'firebase/auth';
 import { auth } from '../firebase/config';
 
@@ -21,6 +22,12 @@ export function useAuth() {
       setLoading(false);
       setError(null);
     });
+
+    // Verificar si hay resultados de redirección al cargar
+    getRedirectResult(auth)
+      .catch((err) => {
+        setError((err as Error).message);
+      });
 
     return () => unsubscribe();
   }, []);
@@ -49,7 +56,8 @@ export function useAuth() {
     try {
       setError(null);
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      // Usar redirección en lugar de popup
+      await signInWithRedirect(auth, provider);
     } catch (err) {
       setError((err as Error).message);
       throw err;
