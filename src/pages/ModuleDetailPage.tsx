@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuthContext } from '../context/AuthContext';
-import { doc, setDoc, getDoc, collection } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/config';
 
 const modulesData = {
