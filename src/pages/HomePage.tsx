@@ -1,5 +1,5 @@
 import { useAuthContext } from '../context/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { doc, getDoc, collection } from 'firebase/firestore';
 import { firestore } from '../firebase/config';
@@ -126,9 +126,16 @@ export function HomePage() {
   
   return (
     <div className="py-6">
-      <h1 className="text-2xl font-bold mb-6 text-center text-splash">
-        Bienvenido a MediCalma
-      </h1>
+      <div className="flex flex-col items-center mb-8">
+        <img 
+          src="/favicon.png" 
+          alt="MediCalma Logo" 
+          className="h-16 w-auto mb-2" 
+        />
+        <h1 className="text-2xl font-bold text-splash">
+          Bienvenido a MediCalma
+        </h1>
+      </div>
       
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <h2 className="text-lg font-semibold mb-3 text-splash">
@@ -188,21 +195,6 @@ export function HomePage() {
           <p className="text-gray-600">
             "{dailyTip}"
           </p>
-        </div>
-        
-        <div className="pt-4 flex space-x-3">
-          <Link 
-            to="/exercises"
-            className="flex-1 text-center py-3 bg-white rounded-lg shadow border border-gray-200"
-          >
-            Todos los ejercicios
-          </Link>
-          <Link 
-            to="/modules"
-            className="flex-1 text-center py-3 bg-white rounded-lg shadow border border-gray-200"
-          >
-            Todos los módulos
-          </Link>
         </div>
       </div>
     </div>

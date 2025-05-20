@@ -8,7 +8,7 @@ export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   
-  const { login, loginWithGoogle, error: authError, setError: setAuthError } = useAuthContext();
+  const { login, error: authError, setError: setAuthError } = useAuthContext();
 
   useEffect(() => {
     if (authError) {
@@ -27,20 +27,6 @@ export function LoginForm() {
     } catch (error) {
       setErrorMessage('Error al iniciar sesión. Verifica tus credenciales.');
       console.error('Login error:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    
-    try {
-      await loginWithGoogle();
-    } catch (error) {
-      setErrorMessage('Error al iniciar sesión con Google.');
-      console.error('Google login error:', error);
     } finally {
       setIsLoading(false);
     }
@@ -126,33 +112,6 @@ export function LoginForm() {
           </button>
         </div>
       </form>
-      
-      <div className="mt-8">
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-gray-50 text-gray-500">o continúa con</span>
-          </div>
-        </div>
-        
-        <div className="mt-6">
-          <button
-            onClick={handleGoogleLogin}
-            disabled={isLoading}
-            className="w-full flex justify-center items-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-splash disabled:opacity-50 transition-all duration-200"
-          >
-            <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
-              <path
-                d="M12.545 10.239v3.821h5.445c-0.712 2.315-2.647 3.972-5.445 3.972-3.332 0-6.033-2.701-6.033-6.033s2.701-6.032 6.033-6.032c1.498 0 2.866 0.549 3.921 1.453l2.814-2.814c-1.79-1.677-4.184-2.702-6.735-2.702-5.522 0-10 4.478-10 10s4.478 10 10 10c8.396 0 10.249-7.85 9.426-11.748l-9.426 0.083z"
-                fill="#4285F4"
-              />
-            </svg>
-            Continuar con Google
-          </button>
-        </div>
-      </div>
       
       <p className="mt-8 text-center text-sm text-gray-600">
         ¿No tienes una cuenta?{' '}

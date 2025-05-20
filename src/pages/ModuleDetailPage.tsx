@@ -215,17 +215,159 @@ const modulesData = {
       {
         title: 'La ciencia del sueño',
         description: 'Conoce cómo funciona el sueño y por qué es tan importante para tu salud.',
-        content: `<!-- Contenido simulado -->`
+        content: `
+          <h1>La Ciencia del Sueño</h1>
+          
+          <p>El sueño es un proceso biológico fundamental, tan esencial para nuestra supervivencia como comer o respirar. Durante el sueño, nuestro cuerpo y mente realizan funciones críticas para mantenernos saludables, alertas y emocionalmente equilibrados.</p>
+          
+          <h2>¿Por qué dormimos?</h2>
+          <p>Dormir no es simplemente un estado de inactividad. Es un período vital donde ocurren procesos de restauración y consolidación:</p>
+          <ul>
+            <li><strong>Restauración física:</strong> Reparación de tejidos, crecimiento muscular y liberación de hormonas importantes.</li>
+            <li><strong>Consolidación de la memoria:</strong> El cerebro procesa la información del día, fortaleciendo recuerdos importantes y descartando lo irrelevante.</li>
+            <li><strong>Regulación emocional:</strong> El sueño ayuda a procesar emociones y a mantener un estado de ánimo estable.</li>
+            <li><strong>Limpieza cerebral:</strong> Se eliminan subproductos metabólicos tóxicos acumulados en el cerebro durante la vigilia.</li>
+          </ul>
+
+          <h2>Las Fases del Sueño</h2>
+          <p>El sueño se compone de ciclos que alternan entre dos tipos principales: el sueño No-REM (NREM) y el sueño REM (Movimiento Rápido de los Ojos).</p>
+          <ol>
+            <li><strong>Sueño No-REM (NREM):</strong> Se divide en tres etapas:
+                <ul>
+                    <li><strong>Etapa N1 (Sueño Ligero):</strong> Transición entre la vigilia y el sueño. Dura pocos minutos. Es fácil despertarse.</li>
+                    <li><strong>Etapa N2 (Sueño Ligero Profundo):</strong> Disminuye el ritmo cardíaco y la temperatura corporal. El cuerpo se prepara para el sueño profundo. Pasamos la mayor parte de nuestro tiempo de sueño en esta etapa.</li>
+                    <li><strong>Etapa N3 (Sueño Profundo u Ondas Lentas):</strong> Es la etapa más restauradora físicamente. Es difícil despertar a alguien en esta fase. Es crucial para la reparación de tejidos, el crecimiento y el sistema inmunológico.</li>
+                </ul>
+            </li>
+            <li><strong>Sueño REM:</strong> Se caracteriza por movimientos oculares rápidos, aumento de la actividad cerebral (similar a la vigilia), y parálisis muscular temporal. Es la etapa donde ocurren la mayoría de los sueños vívidos. Crucial para el aprendizaje, la memoria y el procesamiento emocional.</li>
+          </ol>
+          <p>Un ciclo completo de sueño dura aproximadamente 90-110 minutos y se repite varias veces durante la noche.</p>
+
+          <h2>¿Cuántas horas necesitamos?</h2>
+          <p>La cantidad de sueño necesaria varía según la edad y el individuo, pero aquí hay algunas pautas generales:</p>
+          <ul>
+            <li><strong>Adultos (18-64 años):</strong> 7-9 horas</li>
+            <li><strong>Adultos mayores (65+ años):</strong> 7-8 horas</li>
+            <li><strong>Adolescentes (14-17 años):</strong> 8-10 horas</li>
+          </ul>
+
+          <h2>Consecuencias de la privación del sueño</h2>
+          <p>La falta crónica de sueño puede tener serias consecuencias para la salud:</p>
+          <ul>
+            <li>Dificultad para concentrarse y tomar decisiones.</li>
+            <li>Problemas de memoria y aprendizaje.</li>
+            <li>Irritabilidad y cambios de humor.</li>
+            <li>Sistema inmunológico debilitado.</li>
+            <li>Mayor riesgo de accidentes.</li>
+            <li>Aumento del riesgo de condiciones crónicas como obesidad, diabetes, enfermedades cardiovasculares y depresión.</li>
+          </ul>
+          <p>En la próxima lección, aprenderemos cómo crear un ambiente y una rutina que favorezcan un sueño reparador.</p>
+        `
       },
       {
         title: 'Creando una rutina nocturna efectiva',
         description: 'Diseña rituales nocturnos que preparen a tu cuerpo y mente para descansar.',
-        content: `<!-- Contenido simulado -->`
+        content: `
+          <h1>Creando una Rutina Nocturna Efectiva</h1>
+          
+          <p>Una rutina nocturna consistente y relajante es clave para preparar tu cuerpo y mente para un sueño de calidad. Esto se conoce como "higiene del sueño" e implica adoptar hábitos que promuevan un descanso óptimo.</p>
+          
+          <h2>Optimiza tu Entorno de Sueño</h2>
+          <p>Tu dormitorio debe ser un santuario para el descanso. Considera estos factores:</p>
+          <ul>
+            <li><strong>Oscuridad:</strong> Usa cortinas opacas para bloquear la luz exterior. La oscuridad estimula la producción de melatonina, la hormona del sueño.</li>
+            <li><strong>Temperatura:</strong> Mantén una temperatura fresca, generalmente entre 18-22°C (65-72°F).</li>
+            <li><strong>Silencio:</strong> Minimiza los ruidos. Considera usar tapones para los oídos o una máquina de ruido blanco si es necesario.</li>
+            <li><strong>Comodidad:</strong> Invierte en un colchón y almohadas cómodos y adecuados para ti.</li>
+            <li><strong>Libre de distracciones:</strong> Evita tener televisores, computadoras o material de trabajo en el dormitorio.</li>
+          </ul>
+
+          <h2>Hábitos a Cultivar y Evitar</h2>
+          
+          <h3>Qué hacer:</h3>
+          <ul>
+            <li><strong>Establece un horario regular:</strong> Intenta acostarte y levantarte a la misma hora todos los días, incluso los fines de semana, para regular tu reloj biológico.</li>
+            <li><strong>Crea un ritual relajante:</strong> Dedica 30-60 minutos antes de acostarte a actividades tranquilas como leer un libro (físico, no en pantalla), tomar un baño tibio, escuchar música suave o practicar técnicas de relajación.</li>
+            <li><strong>Haz ejercicio regularmente:</strong> Pero evita el ejercicio intenso cerca de la hora de dormir.</li>
+            <li><strong>Exponte a la luz natural durante el día:</strong> Esto ayuda a regular tu ciclo de sueño-vigilia.</li>
+          </ul>
+
+          <h3>Qué evitar:</h3>
+          <ul>
+            <li><strong>Cafeína y Nicotina:</strong> Evita estimulantes al menos 4-6 horas antes de dormir.</li>
+            <li><strong>Alcohol:</strong> Aunque puede ayudarte a conciliar el sueño inicialmente, interrumpe los ciclos de sueño más tarde en la noche.</li>
+            <li><strong>Comidas pesadas o picantes:</strong> Pueden causar indigestión o malestar. Si tienes hambre, opta por un snack ligero.</li>
+            <li><strong>Líquidos en exceso:</strong> Para evitar interrupciones para ir al baño.</li>
+            <li><strong>Pantallas (teléfonos, tablets, TV, computadoras):</strong> La luz azul que emiten suprime la melatonina. Deja de usarlas al menos una hora antes de acostarte.</li>
+            <li><strong>Siestas largas o tardías:</strong> Si necesitas una siesta, que sea corta (20-30 minutos) y temprano en la tarde.</li>
+            <li><strong>Preocupaciones en la cama:</strong> Si no puedes dormir después de 20 minutos, levántate, ve a otra habitación y haz algo relajante hasta que sientas sueño nuevamente.</li>
+          </ul>
+          <p>Implementar estos cambios gradualmente puede marcar una gran diferencia en la calidad de tu sueño.</p>
+        `
       },
       {
         title: 'Meditaciones para el sueño profundo',
         description: 'Prácticas guiadas específicamente diseñadas para inducir un sueño reparador.',
-        content: `<!-- Contenido simulado -->`
+        content: `
+          <h1>Meditaciones para el Sueño Profundo</h1>
+          
+          <p>La meditación y las técnicas de relajación pueden ser herramientas muy efectivas para calmar la mente, reducir la ansiedad y preparar el cuerpo para un sueño reparador. Si te cuesta desconectar por la noche, estas prácticas pueden ayudarte.</p>
+          
+          <h2>¿Cómo ayuda la meditación al sueño?</h2>
+          <ul>
+            <li><strong>Calma el sistema nervioso:</strong> Activa la respuesta de relajación (sistema nervioso parasimpático), contrarrestando el estrés.</li>
+            <li><strong>Reduce los pensamientos rumiantes:</strong> Ayuda a observar los pensamientos sin engancharse en ellos, disminuyendo la "mente ocupada" que impide dormir.</li>
+            <li><strong>Aumenta la conciencia corporal:</strong> Permite identificar y liberar tensiones físicas.</li>
+            <li><strong>Mejora la producción de melatonina:</strong> Al reducir el estrés y la ansiedad.</li>
+          </ul>
+
+          <h2>Técnicas de Meditación para Dormir</h2>
+          
+          <h3>1. Relajación Muscular Progresiva</h3>
+          <p>Esta técnica consiste en tensar y relajar sistemáticamente diferentes grupos musculares.</p>
+          <ol>
+            <li>Acuéstate cómodamente en tu cama.</li>
+            <li>Comienza por los pies: tensa los músculos de los pies durante 5 segundos y luego relájalos completamente durante 10-15 segundos, notando la diferencia.</li>
+            <li>Sube lentamente por el cuerpo: pantorrillas, muslos, glúteos, abdomen, pecho, brazos, hombros, cuello y cara.</li>
+            <li>Concéntrate en la sensación de relajación profunda en cada área.</li>
+          </ol>
+
+          <h3>2. Escaneo Corporal (Body Scan) Enfocado al Sueño</h3>
+          <p>Similar a la relajación progresiva, pero sin tensar. Se trata de llevar la atención a cada parte del cuerpo.</p>
+          <ol>
+            <li>Acuéstate y cierra los ojos.</li>
+            <li>Dirige tu atención a la respiración por unos momentos.</li>
+            <li>Comienza por los dedos de los pies, sintiendo cualquier sensación presente (hormigueo, calor, presión) sin juzgar.</li>
+            <li>Lentamente, mueve tu atención hacia arriba: pies, tobillos, piernas, etc., hasta llegar a la coronilla.</li>
+            <li>Permite que cada parte de tu cuerpo se sienta pesada y relajada al llevar tu atención a ella. Si te distraes, suavemente regresa tu atención.</li>
+          </ol>
+          
+          <h3>3. Visualización Guiada</h3>
+          <p>Imagina un lugar tranquilo y pacífico. Puede ser una playa, un bosque, o cualquier sitio que te transmita calma.</p>
+          <ol>
+            <li>Acuéstate cómodamente.</li>
+            <li>Cierra los ojos e imagina todos los detalles de tu lugar seguro: los sonidos, los olores, las texturas, la temperatura.</li>
+            <li>Sumérgete en la sensación de paz y seguridad de ese lugar.</li>
+            <li>Permanece en esta visualización, permitiendo que tu cuerpo se relaje cada vez más.</li>
+          </ol>
+          
+          <h3>4. Meditación de Respiración Consciente</h3>
+          <p>Simplemente enfócate en tu respiración.</p>
+          <ol>
+            <li>Nota la sensación del aire entrando y saliendo de tu cuerpo.</li>
+            <li>Puedes contar tus respiraciones (ej. inhala 1, exhala 2... hasta 10, y vuelve a empezar) para mantener la concentración.</li>
+            <li>Si tu mente divaga, reconócelo amablemente y regresa tu atención a la respiración.</li>
+          </ol>
+          
+          <h2>Consejos para Meditar en la Cama</h2>
+          <ul>
+            <li><strong>Intención:</strong> Tu objetivo es relajarte y permitir que el sueño llegue, no "forzarte" a dormir.</li>
+            <li><strong>Comodidad:</strong> Asegúrate de estar en una posición cómoda.</li>
+            <li><strong>Sin expectativas:</strong> No te preocupes si no te duermes inmediatamente. La relajación en sí misma es beneficiosa.</li>
+            <li><strong>Consistencia:</strong> Como cualquier habilidad, la meditación se vuelve más efectiva con la práctica regular.</li>
+          </ul>
+          <p>Experimenta con estas técnicas y encuentra la que mejor te funcione. ¡Dulces sueños!</p>
+        `
       }
     ]
   }

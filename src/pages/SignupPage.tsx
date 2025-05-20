@@ -34,9 +34,6 @@ export function SignupPage() {
           <h1 className="mt-4 text-4xl font-extrabold text-splash tracking-tight">
             MediCalma
           </h1>
-          <p className="mt-2 text-sm text-gray-600">
-            Tu plataforma médica de confianza
-          </p>
         </div>
         
         <div className="bg-white py-8 px-8 shadow-2xl rounded-2xl sm:px-10 border border-gray-100 relative overflow-hidden">

@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
+import { doc, setDoc } from 'firebase/firestore';
+import { firestore } from '../firebase/config';
 
 export function ProfilePage() {
   const { user, logout } = useAuthContext();
   const navigate = useNavigate();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [isResettingProgress, setIsResettingProgress] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -16,6 +20,32 @@ export function ProfilePage() {
       console.error('Error al cerrar sesión:', error);
     } finally {
       setIsLoggingOut(false);
+    }
+  };
+
+  const handleResetProgress = async () => {
+    try {
+      setIsResettingProgress(true);
+      
+      // Limpiar progreso en localStorage
+      localStorage.removeItem('moduleProgress');
+      
+      // Limpiar progreso en Firebase si el usuario está autenticado
+      if (user) {
+        const progressDocRef = doc(firestore, `users/${user.uid}/progress/modules`);
+        await setDoc(progressDocRef, {}, { merge: false });
+      }
+      
+      // Cerrar el modal de confirmación
+      setShowResetConfirm(false);
+      
+      // Notificar al usuario que el progreso se ha reseteado
+      alert('Progreso reseteado exitosamente.');
+    } catch (error) {
+      console.error('Error al resetear el progreso:', error);
+      alert('Error al resetear el progreso. Por favor, intenta nuevamente.');
+    } finally {
+      setIsResettingProgress(false);
     }
   };
 
@@ -46,11 +76,6 @@ export function ProfilePage() {
             <label className="block text-sm font-medium text-gray-500">Nombre</label>
             <p className="text-gray-800">{user?.displayName || 'No especificado'}</p>
           </div>
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-500">Cuenta verificada</label>
-            <p className="text-gray-800">{user?.emailVerified ? 'Sí' : 'No'}</p>
-          </div>
         </div>
       </div>
 
@@ -75,41 +100,35 @@ export function ProfilePage() {
         </button>
       </div>
 
+      {/* Sección de Información de la App */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-4" style={{ color: '#0b8fac' }}>Configuración</h2>
-        
-        <div className="space-y-4">
-          <button 
-            className="w-full flex items-center justify-between py-3 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
-            onClick={() => alert('Función en desarrollo')}
-          >
-            <span className="font-medium">Editar perfil</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-          <button 
-            className="w-full flex items-center justify-between py-3 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
-            onClick={() => alert('Función en desarrollo')}
-          >
-            <span className="font-medium">Notificaciones</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-          <button 
-            className="w-full flex items-center justify-between py-3 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
-            onClick={() => alert('Función en desarrollo')}
-          >
-            <span className="font-medium">Privacidad</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        <div className="flex flex-col items-center text-center">
+          <img 
+            src="/favicon.png" 
+            alt="MediCalma Logo" 
+            className="h-16 w-auto mb-3" 
+          />
+          <h2 className="text-lg font-semibold text-splash mb-2">MediCalma</h2>
+          <p className="text-gray-600 text-sm">
+            La aplicación que te ayuda a mantener tu bienestar mental
+            a través de ejercicios de respiración y mindfulness.
+          </p>
+          <p className="text-gray-500 text-xs mt-3">
+            Versión 1.0.0
+          </p>
         </div>
       </div>
+
+      {/* Botón para resetear progreso */}
+      <button 
+        onClick={() => setShowResetConfirm(true)}
+        className="w-full py-3 mb-4 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-white font-medium transition flex justify-center items-center"
+      >
+        {isResettingProgress ? (
+          <div className="w-5 h-5 border-t-2 border-white border-solid rounded-full animate-spin mr-2"></div>
+        ) : null}
+        Resetear progreso de módulos
+      </button>
 
       <button 
         onClick={handleLogout}
@@ -121,6 +140,36 @@ export function ProfilePage() {
         ) : null}
         Cerrar sesión
       </button>
+
+      {/* Modal de confirmación de reseteo */}
+      {showResetConfirm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">¿Resetear progreso?</h3>
+            <p className="text-gray-600 mb-6">
+              Esta acción eliminará todo tu progreso en los módulos educativos. Esta acción no se puede deshacer.
+            </p>
+            <div className="flex justify-end space-x-3">
+              <button 
+                onClick={() => setShowResetConfirm(false)}
+                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+              >
+                Cancelar
+              </button>
+              <button 
+                onClick={handleResetProgress}
+                disabled={isResettingProgress}
+                className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center"
+              >
+                {isResettingProgress ? (
+                  <div className="w-4 h-4 border-t-2 border-white border-solid rounded-full animate-spin mr-2"></div>
+                ) : null}
+                Confirmar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 

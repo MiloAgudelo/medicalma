@@ -11,14 +11,14 @@ const modules = [
   {
     id: 'mindfulness-intro',
     title: 'Introducción al Mindfulness',
-    description: 'Descubre los fundamentos de la atención plena y cómo puede transformar tu vida diaria.',
+    description: 'Este módulo te introducirá a los principios básicos del mindfulness. Aprenderás qué es la atención plena, sus beneficios científicamente probados para la reducción del estrés y la ansiedad, y cómo integrarla en tu rutina. Cubriremos técnicas de meditación guiada, ejercicios de respiración consciente y estrategias para aplicar mindfulness en actividades cotidianas, ayudándote a cultivar una mayor calma y claridad mental.',
     lessons: 5,
     image: 'https://images.unsplash.com/photo-1528319725582-ddc096101511?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
   },
   {
     id: 'better-sleep',
     title: 'Mejora tu Sueño',
-    description: 'Explora prácticas y rutinas para conseguir un descanso más reparador.',
+    description: 'Si luchas por dormir bien, este módulo es para ti. Exploraremos la ciencia detrás del sueño y los factores comunes que lo perturban. Aprenderás a establecer una rutina de sueño saludable, optimizar tu entorno para el descanso, y descubrirás técnicas de relajación y mindfulness específicas para antes de dormir. El objetivo es ayudarte a conciliar el sueño más rápido, dormir profundamente y despertar sintiéndote revitalizado.',
     lessons: 3,
     image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // ¡Imagen actualizada aquí!
   }

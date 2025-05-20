@@ -1,0 +1,12 @@
+Logo de MediCalma
+
+Este logo representa la fusión entre el bienestar médico (representado por el símbolo de la cruz) y la calma mental (representada por el estetoscopio en forma de símbolo de infinito o corazón).
+
+Los colores turquesa y verde agua transmiten sensaciones de tranquilidad, salud y equilibrio.
+
+El logo se utiliza en:
+- Favicon del sitio
+- Encabezado de la aplicación
+- Páginas de inicio de sesión y registro
+- Página de perfil
+- Página de inicio 
