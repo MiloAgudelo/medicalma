@@ -7,7 +7,6 @@ import { MainLayout } from '../components/layout/MainLayout';
 // Páginas públicas
 import { LoginPage } from '../pages/LoginPage';
 import { SignupPage } from '../pages/SignupPage';
-import { SplashScreen } from '../pages/SplashScreen';
 
 // Páginas protegidas
 import { HomePage } from '../pages/HomePage';
@@ -27,7 +26,7 @@ function PrivateRoute({ children }: PrivateRouteProps) {
   const { user, loading } = useAuthContext();
   
   if (loading) {
-    return <SplashScreen />;
+    return <div className="fixed inset-0 flex items-center justify-center" style={{ backgroundColor: '#0b8fac' }}><div className="w-16 h-16 border-t-4 border-white border-solid rounded-full animate-spin mx-auto"></div></div>;
   }
   
   if (!user) {
@@ -41,7 +40,6 @@ export function AppRoutes() {
   return (
     <Routes>
       {/* Rutas públicas */}
-      <Route path="/" element={<SplashScreen />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
 
@@ -65,7 +63,7 @@ export function AppRoutes() {
       </Route>
 
       {/* Ruta para cualquier otra dirección */}
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 } 
