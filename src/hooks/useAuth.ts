@@ -78,6 +78,7 @@ export function useAuth() {
     user,
     loading,
     error,
+    setError,
     signup,
     login,
     loginWithGoogle,

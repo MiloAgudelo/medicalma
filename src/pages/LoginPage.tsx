@@ -1,6 +1,22 @@
 import { LoginForm } from '../components/auth/LoginForm';
+import { useAuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export function LoginPage() {
+  const { user, loading } = useAuthContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && user) {
+      navigate('/home', { replace: true });
+    }
+  }, [user, loading, navigate]);
+
+  if (loading || (!loading && user)) {
+    return <div className="fixed inset-0 flex items-center justify-center" style={{ backgroundColor: '#0b8fac' }}><div className="w-16 h-16 border-t-4 border-white border-solid rounded-full animate-spin mx-auto"></div></div>;
+  }
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center relative py-12 px-4 sm:px-6 lg:px-8">
       {/* Fondo con gradiente y patrón */}

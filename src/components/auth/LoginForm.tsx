@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
 
@@ -8,7 +8,14 @@ export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   
-  const { login, loginWithGoogle } = useAuthContext();
+  const { login, loginWithGoogle, error: authError, setError: setAuthError } = useAuthContext();
+
+  useEffect(() => {
+    if (authError) {
+      setErrorMessage(authError);
+      setAuthError(null);
+    }
+  }, [authError, setAuthError]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
