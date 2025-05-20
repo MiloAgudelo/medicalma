@@ -8,7 +8,7 @@
 ![Firebase](https://img.shields.io/badge/Firebase-11.7-FFCA28?logo=firebase&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css&logoColor=white)
 
-**Una plataforma médica moderna diseñada para mejorar la experiencia de pacientes y profesionales de la salud.**
+**Una aplicación de bienestar mental diseñada para mejorar la salud emocional a través de ejercicios de respiración y meditación.**
 
 [Demo en vivo](https://medicalma-iuva.web.app) | [Reportar un problema](https://github.com/MiloAgudelo/medicalma/issues)
 
@@ -27,16 +27,17 @@
 
 ## 🔍 Visión general
 
-MediCalma es una aplicación web moderna que facilita la gestión de citas médicas, historiales clínicos y comunicación entre pacientes y profesionales de la salud. La plataforma está diseñada con un enfoque en la experiencia de usuario, accesibilidad y seguridad de datos.
+MediCalma es una aplicación web enfocada en el bienestar mental que ofrece ejercicios de respiración guiada, meditación y seguimiento del progreso. La plataforma está diseñada para ayudar a los usuarios a reducir el estrés, mejorar su concentración y aumentar su bienestar general a través de módulos interactivos y ejercicios prácticos.
 
 ## ✨ Características
 
-- 🔐 **Autenticación segura** - Sistema de login/registro con Firebase Auth
-- 📅 **Gestión de citas** - Agenda, reprograma y cancela citas médicas
-- 📝 **Historiales médicos** - Acceso a historiales médicos digitales
-- 💬 **Comunicación** - Mensajería entre pacientes y profesionales
+- 🔐 **Autenticación segura** - Sistema de login/registro con Firebase Auth y Google
+- 🧘 **Ejercicios de bienestar** - Acceso a ejercicios de respiración y meditación guiada
+- 📊 **Seguimiento de progreso** - Monitoreo de los módulos y ejercicios completados
+- 📝 **Diario de reflexión** - Funcionalidad para registrar pensamientos y emociones
+- 🎓 **Módulos educativos** - Contenido organizado en módulos de aprendizaje sobre bienestar mental
+- 🌟 **Plan premium** - Acceso a funcionalidades avanzadas mediante suscripción
 - 📱 **Diseño responsivo** - Experiencia óptima en cualquier dispositivo
-- 🌙 **Modo oscuro** - Interfaz adaptable a las preferencias del usuario
 
 ## 🛠 Tecnologías
 

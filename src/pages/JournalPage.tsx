@@ -105,7 +105,7 @@ export function JournalPage() {
   
   return (
     <div className="py-6">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Mi Diario</h1>
+      <h1 className="text-2xl font-bold text-splash mb-6">Mi Diario</h1>
       
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
@@ -114,7 +114,7 @@ export function JournalPage() {
       )}
       
       <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-        <h2 className="text-lg font-medium text-gray-900 mb-3">Nueva entrada</h2>
+        <h2 className="text-lg font-medium text-splash mb-3">Nueva entrada</h2>
         <textarea
           value={newEntry}
           onChange={(e) => setNewEntry(e.target.value)}
@@ -130,7 +130,7 @@ export function JournalPage() {
         </button>
       </div>
       
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Entradas anteriores</h2>
+      <h2 className="text-xl font-semibold text-splash mb-4">Entradas anteriores</h2>
       
       {entries.length === 0 ? (
         <p className="text-gray-500 text-center py-6">No hay entradas aún. Comienza escribiendo tus pensamientos.</p>

@@ -55,7 +55,7 @@ export function PremiumPage() {
       </div>
       
       <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-        <div className="bg-gradient-to-r from-splash to-blue-600 px-6 py-8 text-white">
+        <div className="bg-gradient-to-r from-purple-500 to-indigo-600 px-6 py-8 text-white">
           <h2 className="text-2xl font-bold mb-2">MediCalma Premium</h2>
           <p className="text-white/80">Acceso ilimitado a todas las funciones</p>
           <div className="mt-4">

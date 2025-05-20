@@ -7,6 +7,36 @@
     font-family: system-ui, sans-serif;
   }
   body {
-    @apply bg-[#FFFFFF] min-h-screen;
+    @apply bg-gray-50 min-h-screen;
+  }
+}
+
+@layer components {
+  .text-splash {
+    color: #0b8fac;
+  }
+  
+  .bg-splash {
+    background-color: #0b8fac;
+  }
+  
+  .bg-secondary-100 {
+    background-color: #e1f5fa;
+  }
+  
+  .focus\:ring-splash:focus {
+    --tw-ring-color: #0b8fac;
+  }
+  
+  .focus\:border-splash:focus {
+    border-color: #0b8fac;
+  }
+  
+  .hover\:bg-opacity-90:hover {
+    --tw-bg-opacity: 0.9;
+  }
+  
+  .prose h1, .prose h2, .prose h3 {
+    color: #0b8fac;
   }
 }

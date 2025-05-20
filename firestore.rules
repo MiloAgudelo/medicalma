@@ -3,13 +3,25 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Autenticación necesaria para todos los documentos
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if false; // Por defecto denegar todo
     }
     
     // Reglas específicas para colecciones
     match /users/{userId} {
-      allow read: if request.auth != null;
+      allow read: if request.auth != null && request.auth.uid == userId;
       allow write: if request.auth != null && request.auth.uid == userId;
+      
+      // Permitir acceso a los documentos anidados del usuario (progress, exerciseHistory, etc.)
+      match /{subCollection}/{document} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Reglas para la colección journal
+    match /journal/{entryId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
     }
   }
 } 
