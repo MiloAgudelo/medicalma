@@ -59,7 +59,7 @@ export function PremiumPage() {
           <h2 className="text-2xl font-bold mb-2">MediCalma Premium</h2>
           <p className="text-white/80">Acceso ilimitado a todas las funciones</p>
           <div className="mt-4">
-            <span className="text-3xl font-bold">$9.99</span>
+            <span className="text-3xl font-bold">$2.99</span>
             <span className="text-white/80 ml-1">/mes</span>
           </div>
         </div>
